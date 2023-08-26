@@ -1,11 +1,15 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './component/shared/Header';
-import Home from './component/Home';
 import MovieDetails from './component/MovieDetails';
-import Popular from './component/Popular';
-import Upcoming from './component/Upcoming';
-import TopRated from './TopRated';
+import Popular from './component/Movie/Popular';
+import TopRated from './component/Movie/TopRated';
+import Upcoming from './component/Movie/Upcoming';
+import Trending from './component/Movie/Trending';
+import Home from './component/home/Home';
+import NowPlaying from './component/Movie/NowPlaying';
+import People from './component/People/People';
+import PeopleDetails from './component/People/PeopleDetails';
 
 function App() {
   return (
@@ -17,8 +21,11 @@ function App() {
           <Route path="/popular" element={<Popular/>}></Route>
           <Route path="/upcoming" element={<Upcoming/>}></Route>
           <Route path="/top_rated" element={<TopRated/>}></Route>
+          <Route path="/trending" element={<Trending/>}></Route>
+          <Route path="/now-playing" element={<NowPlaying/>}></Route>
           <Route path="/movie/:id" element={<MovieDetails/>} />
-          <Route path="/movies/:type" element={<h1>Movie type</h1>} />
+          <Route path="/people" element={<People/>}></Route>
+          <Route path="/people/:id" element={<PeopleDetails/>} />
           <Route path="/*" element={<h1>Error</h1>} />
         </Routes>
       </BrowserRouter>
